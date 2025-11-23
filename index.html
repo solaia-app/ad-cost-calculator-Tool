@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ad Cost Calculator</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+<script defer src="script.js"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+<div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+  <h1 class="text-2xl font-bold mb-4 text-center">Ad Cost Calculator</h1>
+  <div class="mb-3">
+    <label class="block mb-1">Platform</label>
+    <select id="platform" class="w-full p-2 border rounded">
+      <option value="whatsapp">WhatsApp</option>
+      <option value="tiktok">TikTok</option>
+      <option value="meta">Meta</option>
+      <option value="google">Google Ads</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label class="block mb-1">Amount</label>
+    <input id="amount" type="number" placeholder="Enter amount" class="w-full p-2 border rounded">
+  </div>
+  <div class="mb-3">
+    <label class="block mb-1">Currency</label>
+    <select id="currency" class="w-full p-2 border rounded">
+      <option value="USD">USD</option>
+      <option value="PKR">PKR</option>
+      <option value="EUR">EUR</option>
+      <option value="INR">INR</option>
+      <option value="AED">AED</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label class="block mb-1">Tax %</label>
+    <input id="tax" type="number" value="0" class="w-full p-2 border rounded">
+  </div>
+  <div class="mb-3">
+    <label class="block mb-1">Target Currency</label>
+    <select id="targetCurrency" class="w-full p-2 border rounded">
+      <option value="USD">USD</option>
+      <option value="PKR">PKR</option>
+      <option value="EUR">EUR</option>
+      <option value="INR">INR</option>
+      <option value="AED">AED</option>
+    </select>
+  </div>
+  <button id="calc" class="w-full bg-blue-600 text-white p-2 rounded font-bold">Calculate</button>
+  <div id="result" class="mt-4 hidden bg-gray-100 p-3 rounded">
+    <pre id="breakdown" class="text-sm"></pre>
+    <div class="flex gap-2 mt-2">
+      <button id="download" class="flex-1 bg-green-500 text-white p-2 rounded">Download PDF</button>
+      <button id="copy" class="flex-1 bg-gray-300 text-black p-2 rounded">Copy Total</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
